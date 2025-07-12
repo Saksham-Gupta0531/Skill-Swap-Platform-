@@ -1,0 +1,145 @@
+.HomeMaindiv {
+    min-height: 100vh;
+    background-color: white;
+    color: black;
+}
+
+.navbar {
+    background-color: transparent;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Homefilter {
+    padding: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.RequestCards {
+    padding: 20px;
+    min-height: 60vh;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.paginationSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.paginationButton {
+    background-color: transparent;
+    border: 1px solid #6a6a6a;
+    color: #444;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginationButton:hover {
+    background-color: #4a4a4a;
+    color: white;
+}
+
+.paginationButton.active {
+    background-color: rgb(11, 184, 140);
+    color: white;
+    border-color: rgb(11, 184, 140);
+}
+
+.paginationButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.paginationArrow {
+    background-color: transparent;
+    border: 1px solid #6a6a6a;
+    color: #444;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginationArrow:hover:not(:disabled) {
+    background-color: #4a4a4a;
+    color: white;
+}
+
+.paginationArrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.loadingState,
+.emptyState,
+.errorState {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-size: 18px;
+    color: #444;
+}
+
+.errorState {
+    color: red;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .RequestCards { padding: 15px; }
+    .paginationSection { gap: 12px; }
+    .paginationButton, .paginationArrow {
+        width: 35px; height: 35px; font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Homefilter { padding: 15px; }
+    .RequestCards { padding: 10px; }
+    .cardsContainer { gap: 15px; }
+    .paginationSection { gap: 10px; flex-wrap: wrap; margin-top: 30px; }
+    .paginationButton, .paginationArrow {
+        width: 35px; height: 35px; font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .RequestCards { padding: 5px; }
+    .cardsContainer { gap: 10px; }
+    .paginationSection { gap: 8px; margin-top: 20px; }
+    .paginationButton, .paginationArrow {
+        width: 30px; height: 30px; font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .RequestCards {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    .paginationSection { margin-top: 50px; }
+}

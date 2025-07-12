@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== CARDS COMPONENT ===== */
+.CardsMaindiv {
+    width: 100%;
+    padding: 20px;
+}
+
+
+.Cardsdiv {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    background-color: #c8e1bb;
+    border: 2px solid #c8e1bb;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: white;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.Cardsdiv:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+/* Profile Photo Section */
+.profilePhoto {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+}
+
+.CircleShape {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #6a6a6a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+    position: relative;
+}
+
+.Profiltitle {
+    font-size: 12px;
+    color: #ccc;
+    text-align: center;
+    line-height: 1.2;
+}
+
+
+/* Name and Skills Section */
+.nameSkill {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.userName {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.skillsSection {
+    margin-bottom: 10px;
+}
+
+.skillLabel {
+    font-size: 14px;
+    color: #2C7F21;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.skillTags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.skillTag {
+    background-color: transparent;
+    border: 1px solid #6a6a6a;
+    color: black;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+.skillTag:hover{
+    background-color: #6a6a6a;
+    color: white;
+}
+
+.skillWantedLabel {
+    font-size: 14px;
+    color: #1313CC;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Request Button Section */
+.Requestbtn {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.requestButton {
+    background-color: #007AD9;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.requestButton:hover {
+    background-color: #0162ca;
+    transform: translateY(-1px);
+}
+
+.rating {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.ratingLabel {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.ratingValue {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+/* ===== TABLET RESPONSIVE (768px - 1024px) ===== */
+@media screen and (max-width: 1024px) {
+    .Cardsdiv {
+        max-width: 95%;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .profilePhoto {
+        width: 100px;
+        height: 100px;
+    }
+
+    .userName {
+        font-size: 20px;
+    }
+
+    .skillTag {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+
+    .requestButton {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ===== MOBILE RESPONSIVE (max-width: 768px) ===== */
+@media screen and (max-width: 768px) {
+    .CardsMaindiv {
+        padding: 10px;
+    }
+
+    .Cardsdiv {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    .profilePhoto {
+        width: 80px;
+        height: 80px;
+    }
+
+    .nameSkill {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .userName {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .skillTags {
+        justify-content: center;
+    }
+
+    .skillTag {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .Requestbtn {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .requestButton {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .paginationSection {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .paginationButton {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+/* ===== EXTRA SMALL MOBILE (max-width: 480px) ===== */
+@media screen and (max-width: 480px) {
+    .CardsMaindiv {
+        padding: 5px;
+    }
+
+    .Cardsdiv {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .profilePhoto {
+        width: 70px;
+        height: 70px;
+    }
+
+    .userName {
+        font-size: 16px;
+    }
+
+    .skillTags {
+        gap: 5px;
+    }
+
+    .skillTag {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+
+    .Requestbtn {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .requestButton {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .paginationButton {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+/* ===== LARGE SCREENS (min-width: 1200px) ===== */
+@media screen and (min-width: 1200px) {
+    .CardsMaindiv {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .Cardsdiv {
+        max-width: 1000px;
+    }
+}

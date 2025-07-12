@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.FilterMaindiv {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.FilterMaindiv>.leftfilter {
+    flex: 1;
+}
+
+.FilterMaindiv>.rightfilter {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.FilterMaindiv>.rightfilter>.filterdropdown {
+    margin-right: 40px;
+}
+
+.FilterMaindiv>.rightfilter>.filterdropdown>select {
+    padding: 0.5em;
+    width: 150px;
+}
+
+
+
+.FilterMaindiv>.rightfilter>.filterSearch {
+    margin-right: 40px;
+}
+
+.FilterMaindiv>.rightfilter>.filterSearch>input {
+    padding: 0.5em;
+    width: 200px;
+    margin-right: 5px;
+}
+
+.FilterMaindiv>.rightfilter>.filterSearch>button {
+    padding: 7px 15px;
+    background-color: #007AD9;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.FilterMaindiv>.rightfilter>.filterSearch>button:hover {
+    transform: scale3d(1.1, 1.1, 1.1);
+    background-color: #0162ca;
+}
+
+/* -----Mobile Responsive----- */
+
+@media (max-width: 768px) {
+    .FilterMaindiv>.leftfilter {
+        width: 0%;
+        flex: 0;
+    }
+
+    .FilterMaindiv>.rightfilter {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .FilterMaindiv>.rightfilter>.filterdropdown {
+        margin-right: 10px;
+    }
+
+    .FilterMaindiv>.rightfilter>.filterdropdown>select {
+        padding: 0.2em;
+        width: 100px;
+    }
+
+    .FilterMaindiv>.rightfilter>.filterSearch {
+        margin-right: 10px;
+    }
+
+    .FilterMaindiv>.rightfilter>.filterSearch>input {
+        padding: 0.3em;
+        width: 100px;
+        margin-right: 5px;
+    }
+}

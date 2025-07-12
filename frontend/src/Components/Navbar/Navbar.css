@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.NavbarMaindiv{
+    letter-spacing: 1px;
+    background-color: transparent;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    color: #0BB88C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+.NavbarMaindiv>.leftnav{
+    flex: 1;
+    font-size: 2rem;
+}
+
+.NavbarMaindiv>.leftnav > .Navtitle{
+    cursor: pointer;
+}
+
+.NavbarMaindiv>.rightnav{
+    flex: 1;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    gap: 2rem;
+}
+.NavbarMaindiv>.rightnav > ul{
+    list-style: none;
+}
+.NavbarMaindiv>.rightnav > ul > li > button{
+    background-color: transparent;
+    color: black;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}

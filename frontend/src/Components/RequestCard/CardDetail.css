@@ -1,0 +1,76 @@
+.detailWrapper {
+  padding: 30px;
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease-out;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: #00c3a5;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.detailCard {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.leftSection {
+  flex: 2;
+  min-width: 280px;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.section ul {
+  padding-left: 20px;
+}
+
+.rightSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileCircle {
+  width: 160px;
+  height: 160px;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detailCard {
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+
+  .profileCircle {
+    margin-bottom: 20px;
+    width: 140px;
+    height: 140px;
+  }
+}

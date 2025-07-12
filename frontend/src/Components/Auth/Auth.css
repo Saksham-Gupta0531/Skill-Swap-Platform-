@@ -1,0 +1,627 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(245, 245, 245);
+    min-height: 100vh;
+}
+
+.LoginMainDiv {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%;
+    background: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.SingupMainDiv {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%;
+    background: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.Loginleft {
+    flex: 1;
+    padding: 2rem 1.5rem;
+     background: #DACAB1;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    order: 1;
+}
+
+.Loginright {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    background-image: url('../../assets/LoginBack1.JPG');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    order: 2;
+}
+
+.signupleft {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    background-image: url('../../assets/LoginBack1.JPG');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    order: 2;
+}
+
+/* Signup Right Section */
+.signupRight {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    background: #DACAB1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    order: 1;
+}
+
+/* Company Title */
+.CompanyTitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Login Title */
+.logintitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: black;
+}
+
+/* Signup Titles */
+.Signuptitle,
+.Signuptitle-2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.Signuptitle {
+    color: #333;
+}
+
+.Signuptitle-2 {
+    color: black;
+}
+
+/* Form Container */
+.loginDetail,
+.signupDetail {
+    width: 100%;
+    max-width: 320px;
+}
+
+/* Input Styles */
+.loginDetail input,
+.signupDetail input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.loginDetail input:focus,
+.signupDetail input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.error {
+    border: 1px solid #ff6b6b !important;
+    background-color: #ffe6e6;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.75rem;
+    display: block;
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+}
+
+.loginDetail button,
+.signupDetail button {
+    width: 100%;
+    padding: 0.75rem;
+    background:#7BC46A;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.loginDetail button:hover,
+.signupDetail button:hover {
+    transform: translateY(-2px);
+}
+
+.newhere {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.loginsubtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.singup-slogon {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.signup-btn button,
+.sign-btn button {
+    padding: 0.75rem 2rem;
+    background: transparent;
+    color: #667eea;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup-btn button:hover,
+.sign-btn button:hover {
+     background: #2d3748;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(3px);
+}
+
+.loader-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 250px;
+    width: 90%;
+}
+
+.loader-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #7BC46A;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader-text {
+    margin: 0;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Success Notification */
+.success-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 10000;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    max-width: 350px;
+    min-width: 250px;
+}
+
+.success-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.success-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.success-message {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Button Loading State */
+.loginDetail button:disabled,
+.signupDetail button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.loginDetail button.loading,
+.signupDetail button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.loginDetail button.loading::after,
+.signupDetail button.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@media (min-width: 768px) {
+
+    .LoginMainDiv,
+    .SingupMainDiv {
+        flex-direction: row;
+        max-width: 900px;
+        margin: 2rem auto;
+        border-radius: 15px;
+        min-height: 600px;
+        margin-top: 20%;
+    }
+
+    .Loginleft,
+    .Loginright,
+    .signupleft,
+    .signupRight {
+        order: initial;
+        padding: 3rem 2rem;
+    }
+
+    .loginDetail,
+    .signupDetail {
+        max-width: 350px;
+    }
+
+    .CompanyTitle {
+        font-size: 2rem;
+    }
+
+    .logintitle,
+    .Signuptitle,
+    .Signuptitle-2 {
+        font-size: 1.8rem;
+    }
+
+    .newhere {
+        font-size: 1.5rem;
+    }
+    .success-notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+        min-width: auto;
+        transform: translateY(-100%);
+    }
+    
+    .success-notification.show {
+        transform: translateY(0);
+    }
+    
+    .loader-container {
+        padding: 1.5rem;
+        max-width: 200px;
+    }
+    
+    .loader-spinner {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .loader-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .LoginMainDiv,
+    .SingupMainDiv {
+        max-width: 1000px;
+        margin: 3rem auto;
+        min-height: 650px;
+    }
+
+    .Loginleft,
+    .Loginright,
+    .signupleft,
+    .signupRight {
+        padding: 4rem 3rem;
+    }
+
+    .loginDetail,
+    .signupDetail {
+        max-width: 400px;
+    }
+
+    .CompanyTitle {
+        font-size: 2.2rem;
+    }
+
+    .logintitle,
+    .Signuptitle,
+    .Signuptitle-2 {
+        font-size: 2rem;
+    }
+
+    .newhere {
+        font-size: 1.6rem;
+    }
+
+    .loginsubtitle,
+    .singup-slogon {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .LoginMainDiv,
+    .SingupMainDiv {
+        max-width: 1200px;
+        min-height: 700px;
+    }
+
+    .Loginleft,
+    .Loginright,
+    .signupleft,
+    .signupRight {
+        padding: 5rem 4rem;
+    }
+
+    .CompanyTitle {
+        font-size: 2.5rem;
+    }
+
+    .logintitle,
+    .Signuptitle,
+    .Signuptitle-2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+
+    .LoginMainDiv,
+    .SingupMainDiv {
+        flex-direction: row;
+        min-height: 100vh;
+    }
+
+    .Loginleft,
+    .Loginright,
+    .signupleft,
+    .signupRight {
+        padding: 1.5rem;
+    }
+
+    .CompanyTitle {
+        font-size: 1.5rem;
+    }
+
+    .logintitle,
+    .Signuptitle,
+    .Signuptitle-2 {
+        font-size: 1.3rem;
+    }
+
+    .newhere {
+        font-size: 1.2rem;
+    }
+
+    .loginsubtitle,
+    .singup-slogon {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .Loginleft,
+    .Loginright,
+    .signupleft,
+    .signupRight {
+        padding: 1.5rem 1rem;
+    }
+
+    .CompanyTitle {
+        font-size: 1.6rem;
+    }
+
+    .logintitle,
+    .Signuptitle,
+    .Signuptitle-2 {
+        font-size: 1.3rem;
+    }
+
+    .loginDetail,
+    .signupDetail {
+        max-width: 280px;
+    }
+
+    .loginDetail input,
+    .signupDetail input {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .error-message {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .CompanyTitle {
+        font-size: 1.4rem;
+    }
+
+    .logintitle,
+    .Signuptitle,
+    .Signuptitle-2 {
+        font-size: 1.2rem;
+    }
+
+    .loginDetail,
+    .signupDetail {
+        max-width: 260px;
+    }
+
+    .Loginleft,
+    .Loginright,
+    .signupleft,
+    .signupRight {
+        padding: 1rem 0.75rem;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+    .loginDetail button,
+    .signupDetail button,
+    .signup-btn button,
+    .sign-btn button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .loginDetail input,
+    .signupDetail input {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    @media (prefers-reduced-motion: reduce) {
+    .loader-spinner {
+        animation: none;
+    }
+    
+    .success-notification {
+        transition: none;
+    }
+    
+    .loginDetail button.loading::after,
+    .signupDetail button.loading::after {
+        animation: none;
+    }
+}
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .newhere {
+        color: white;
+    }
+
+    .loginsubtitle,
+    .singup-slogon {
+        color: #cbd5e0;
+    }
+
+    .signup-btn button,
+    .sign-btn button {
+        color: white;
+        border-color: #667eea;
+    }
+}

@@ -1,0 +1,77 @@
+.requestOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.3); /* Light blur overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+
+.requestModal {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border: 2px solid #e0e0e0;
+}
+
+.requestModal label {
+  display: block;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.requestModal select,
+.requestModal textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: none;
+}
+
+.requestModal textarea {
+  height: 100px;
+}
+
+.submitBtn {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #007AD9;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #005ea9;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .requestModal {
+    padding: 20px;
+  }
+
+  .requestModal label {
+    font-size: 13px;
+  }
+
+  .submitBtn {
+    font-size: 14px;
+  }
+}
