@@ -6,7 +6,6 @@ const PostSkill = () => {
   const [profileImage, setProfileImage] = useState(null);
   const [imageFile, setImageFile] = useState(null);
   const [name, setName] = useState("");
-
   const [location, setLocation] = useState("");
   const [skillsOffered, setSkillsOffered] = useState([]);
   const [skillsWanted, setSkillsWanted] = useState([]);
@@ -19,29 +18,32 @@ const PostSkill = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-useEffect(() => {
-  const fetchUserData = async () => {
-    try {
-      const token = localStorage.getItem("access_token");
-      console.log("Access token:", token);  // ✅ log it
+  useEffect(() => {
+    const token = localStorage.getItem("access");
+    console.log("Access token in PostSkill:", token);
 
-      const res = await axios.get("http://localhost:8000/api/accounts/auth/profile/", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      console.log("User response:", res.data);
-      const user = res.data;
-      setName(`${user.first_name} ${user.last_name}` || user.email || "");
-    } catch (err) {
-      console.error("Error fetching user:", err.response || err);
-      setError("Unable to fetch user info");
+    if (!token) {
+      setError("Not logged in. Please login to post your skill.");
+      return;
     }
-  };
 
-  fetchUserData();
-}, []);
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/api/accounts/auth/profile/", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        console.log("User Data:", response.data);
+        setName(response.data.name || response.data.first_name || "");
+      } catch (error) {
+        console.error("Error fetching user:", error);
+        setError("Failed to load user info. Try again.");
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -60,6 +62,13 @@ useEffect(() => {
   };
 
   const handleSave = async () => {
+    const token = localStorage.getItem("access");
+
+    if (!token) {
+      setError("Please login first.");
+      return;
+    }
+
     if (!imageFile) {
       setError("Please upload a profile image.");
       return;
@@ -75,7 +84,6 @@ useEffect(() => {
     formData.append("profile_photo", imageFile);
 
     try {
-      const token = localStorage.getItem("access_token");
       const res = await axios.post(
         "http://localhost:8000/api/skills/post-skill/",
         formData,
@@ -87,13 +95,13 @@ useEffect(() => {
         }
       );
 
-      console.log("Success:", res.data);
+      console.log("Skill Post Success:", res.data);
       setSuccess(true);
       setError("");
       setTimeout(() => setSuccess(false), 3000);
     } catch (err) {
       console.error(err);
-      setError("Failed to post skill. Check all fields and try again.");
+      setError("Failed to post skill. Please check fields and try again.");
       setSuccess(false);
     }
   };
@@ -118,7 +126,7 @@ useEffect(() => {
           <div className="left-section">
             <div className="form-group">
               <label>Name</label>
-              <div className="readonly">{name}</div>
+              <div className="readonly">{name || "Loading..."}</div>
             </div>
 
             <div className="form-group">
@@ -170,7 +178,7 @@ useEffect(() => {
             </div>
 
             <div className="form-group">
-              <label>Profile</label>
+              <label>Profile Visibility</label>
               <select value={profileStatus} onChange={(e) => setProfileStatus(e.target.value)}>
                 <option value="public">Public</option>
                 <option value="private">Private</option>

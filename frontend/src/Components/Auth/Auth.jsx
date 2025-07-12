@@ -132,8 +132,9 @@ const Auth = () => {
         setIsLoading(true);
         try {
             const response = await axios.post('http://127.0.0.1:8000/api/accounts/auth/login/', loginData);
-            localStorage.setItem('access', response.data.access);
-            localStorage.setItem('refresh', response.data.refresh);
+            console.log(response.data.refresh_token)
+            localStorage.setItem('access', response.data.access_token);
+            localStorage.setItem('refresh', response.data.refresh_token);
             setNotificationMessage('Login successful!');
             setShowSuccessNotification(true);
             setTimeout(() => {
