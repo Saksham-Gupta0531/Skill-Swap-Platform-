@@ -9,12 +9,14 @@ const Request = ({ onClose, onSubmit, mySkills = [], theirSkills = [] }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit?.({ selectedMySkill, selectedTheirSkill, message });
-    onClose(); // Close modal after submit
+    onClose();
   };
 
   return (
     <div className="requestOverlay">
       <div className="requestModal">
+        <button className="closeBtn" onClick={onClose}>×</button>
+
         <form onSubmit={handleSubmit}>
           <label>Choose one of your offered skills</label>
           <select

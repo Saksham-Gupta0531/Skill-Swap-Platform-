@@ -1,64 +1,73 @@
-import React from 'react'
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Cards.css'
+import './Cards.css';
+import { isAuthenticated } from '../utils/auth';
 
 const Cards = ({ userData }) => {
+  const navigate = useNavigate();
+
   const defaultData = {
+    id: 0,
     name: "Joe Wills",
     profilePhoto: "Profile Photo",
-    skillsOffered: ["Java Script", "Python"],
+    skillsOffered: ["JavaScript", "Python"],
     skillsWanted: ["ReactJS", "Graphic Designer"],
     rating: "4.0/5"
   };
 
-    const navigate = useNavigate();
+  const data = userData || defaultData;
 
   const handleClick = () => {
-    navigate(`/card/${userData.id}`, { state: { userData } });
+    if (isAuthenticated()) {
+      navigate(`/card/${data.id}`, { state: { userData: data } });
+    } else {
+      navigate('/Auth');
+    }
   };
-
-  const data = userData || defaultData;
 
   return (
     <div className='CardsMaindiv' onClick={handleClick}>
-        <div className="Cardsdiv">
-            <div className="profilePhoto">
-                <div className='CircleShape'>
-                    <div className='Profiltitle'>{data.profilePhoto}</div>
-                </div>
+      <div className="Cardsdiv">
+        <div className="profilePhoto">
+          <div className='CircleShape'>
+            <div className='Profiltitle'>{data.profilePhoto}</div>
+            <div className="edit">
+              <i className="ri-edit-2-line"></i>
             </div>
-            <div className="nameSkill">
-                <div className="userName">{data.name}</div>
-                
-                <div className="skillsSection">
-                    <span className="skillLabel">Skills Offered &rarr;</span>
-                    <div className="skillTags">
-                        {data.skillsOffered.map((skill, index) => (
-                            <span key={index} className="skillTag">{skill}</span>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="skillsSection">
-                    <span className="skillWantedLabel">Skill wanted &rarr;</span>
-                    <div className="skillTags">
-                        {data.skillsWanted.map((skill, index) => (
-                            <span key={index} className="skillTag">{skill}</span>
-                        ))}
-                    </div>
-                </div>
-            </div>
-            
-            <div className="Requestbtn">
-                <button className="requestButton">Request</button>
-                <div className="rating">
-                    <div className="ratingLabel">rating</div>
-                    <div className="ratingValue">{data.rating}</div>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
-  )
-}
+        <div className="nameSkill">
+          <div className="userName">{data.name}</div>
 
-export default Cards
+          <div className="skillsSection">
+            <span className="skillLabel">Skills Offered →</span>
+            <div className="skillTags">
+              {data.skillsOffered.map((skill, index) => (
+                <span key={index} className="skillTag">{skill}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="skillsSection">
+            <span className="skillWantedLabel">Skill Wanted →</span>
+            <div className="skillTags">
+              {data.skillsWanted.map((skill, index) => (
+                <span key={index} className="skillTag">{skill}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="Requestbtn">
+          <button className="requestButton">Request</button>
+          <div className="rating">
+            <div className="ratingLabel">Rating</div>
+            <div className="ratingValue">{data.rating}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Cards;

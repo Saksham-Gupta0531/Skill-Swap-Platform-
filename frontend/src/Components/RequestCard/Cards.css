@@ -14,7 +14,7 @@
 .Cardsdiv {
     width: 100%;
     max-width: 900px;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 0px auto;
     background-color: #c8e1bb;
     border: 2px solid #c8e1bb;
     border-radius: 15px;
@@ -89,7 +89,7 @@
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .skillTag {

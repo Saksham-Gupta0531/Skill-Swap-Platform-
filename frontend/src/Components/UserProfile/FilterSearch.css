@@ -1,0 +1,25 @@
+.filter-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.filter-search select,
+.filter-search input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #f0f0f0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  min-width: 180px;
+}
+
+.filter-search input:focus,
+.filter-search select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00b89444;
+}

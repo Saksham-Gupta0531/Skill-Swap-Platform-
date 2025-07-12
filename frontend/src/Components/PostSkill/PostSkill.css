@@ -1,0 +1,217 @@
+.ProfileMainDiv{
+    margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.profile-container {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  max-width: 100%;
+  margin: auto;
+  background-color: #c8e1bb;
+  border-radius: 19px;
+  box-shadow: 0 2px 8px rgba(26, 1, 1, 0.08);
+}
+
+.profile-container .header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+
+.profile-container .save,
+.profile-container .discard {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.profile-container .save {
+  background-color: #27ae60;
+  color: white;
+}
+
+.profile-container .discard {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.profile-container .profile-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  border-radius: 12px;
+  padding: 2rem;
+  background-color: #c8e1bb;
+  box-shadow: 0 0 8px rgba(225, 220, 220, 0.1);
+}
+
+.profile-container .left-section {
+  flex: 2;
+  min-width: 300px;
+}
+
+.profile-container .right-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.profile-container .form-group {
+  margin-bottom: 1.2rem;
+  color: rgb(0, 0, 0);
+}
+
+.profile-container .form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.profile-container .form-group input,
+.profile-container .form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #0f0303;
+  background-color: white;
+  color: black;
+  outline: none;
+}
+
+.profile-container .readonly {
+  padding: 0.5rem;
+  border: 1px solid #0f0303;
+  background-color: #eee;
+  border-radius: 6px;
+  color: black;
+}
+
+.profile-container .form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.profile-container .tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.profile-container .tag {
+  background-color: #d0e8ff;
+  color: #333;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-container .remove-btn {
+  background: none;
+  border: none;
+  margin-left: 5px;
+  color: #ff0000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile-container .photo-upload {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-container .profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  border: 2px solid #ccc;
+}
+
+.profile-container .profile-placeholder {
+  width: 120px;
+  height: 120px;
+  background-color: #ddd;
+  border-radius: 50%;
+  line-height: 120px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+
+.profile-container .skill-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+}
+
+.profile-container .skill-input button {
+  padding: 0.4rem 1rem;
+  background-color: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-container .skill-input button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.profile-container .upload-btn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  margin-top: 0.5rem;
+  background-color: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.profile-container .upload-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-container .profile-body {
+    flex-direction: column;
+  }
+
+  .profile-container .right-section {
+    order: -1;
+  }
+}

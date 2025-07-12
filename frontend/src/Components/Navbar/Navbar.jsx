@@ -15,7 +15,9 @@ const Navbar = () => {
             <div className="rightnav">
                 <ul>
                     <li>
+                        <button onClick={() => navigate("/postskill")}>Post Skill</button>
                         <button onClick={() => navigate("/Auth")}>Login</button>
+                        <button onClick={() => navigate("/profile")}>My Profile</button>
                     </li>
                 </ul>
             </div>

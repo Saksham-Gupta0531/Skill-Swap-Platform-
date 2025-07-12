@@ -107,7 +107,16 @@ class TestAuthenticationView(GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        return Response({"msg": "It works"}, status=status.HTTP_200_OK)
+        print("User:", request.user)
+        user = request.user
+        return Response({
+            "email": user.email,
+            "first_name": user.first_name,
+            "last_name": user.last_name,
+            "full_name": user.full_name,
+            "is_verified": user.is_verified
+        }, status=status.HTTP_200_OK)
+
 
 
 class PasswordResetRequestView(GenericAPIView):
