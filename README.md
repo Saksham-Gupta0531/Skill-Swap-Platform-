@@ -33,13 +33,13 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/skillswap.git
+git clone https://github.com/Saksham-Gupta0531/Skill-Swap-Platform-.git
 
 # Navigate to the project folder
-cd skillswap
+cd Skill-Swap-Platform-
 
 # Install dependencies
 npm install
 
 # Run the app
-npm start
+npm run dev
