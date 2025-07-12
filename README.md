@@ -36,7 +36,7 @@
 git clone https://github.com/Saksham-Gupta0531/Skill-Swap-Platform-.git
 
 # Navigate to the project folder
-cd Skill-Swap-Platform-
+cd Skill-Swap-Platform-/frontend
 
 # Install dependencies
 npm install
